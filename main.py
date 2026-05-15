@@ -1,5 +1,0 @@
-print("hello")
-print("hEllo!")
-print("andrey")
-print("PAVEL")
-print("PAVEL")
