@@ -18,8 +18,3 @@ def update(self):
   if keys[pygame.K_RIGHT]:
      self.speed_x = 5
      self.rect.x += self.speed_x
-
-
-
-
-print("ел")
