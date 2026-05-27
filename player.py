@@ -20,6 +20,3 @@ def update(self):
      self.rect.x += self.speed_x
 
 
-
-
-print("ел")
