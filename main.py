@@ -10,24 +10,21 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
 
 def main():
-    # Todo создать object
     player = Player()
 
-    player.update()
-    player.draw()
     while True:
         # 1 Cчитывание
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit("GAME OVER")
         # 2 Обновление
-        #updste
-        def player():
+
+        player.update()
 
 
         # 3 Отрисовка
         screen.fill("lightblue")
-        #draw
+        player.draw(screen=screen)
 
         pygame.display.update()
         clock.tick(60)
