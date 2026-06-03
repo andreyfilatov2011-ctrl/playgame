@@ -21,7 +21,7 @@ class Player(pygame.sprite.Sprite):
         if self.rect.left > WIDTH:
             self.rect.right = 0
 
-        if self.rect.left < 0:
+        if self.rect.right < 0:
             self.rect.left = 800
 
 
