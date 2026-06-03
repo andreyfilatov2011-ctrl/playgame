@@ -1,6 +1,6 @@
 import pygame
 
-SPEED = 5
+from condfig import SPEED
 
 
 class Player(pygame.sprite.Sprite):

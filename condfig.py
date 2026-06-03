@@ -1,0 +1,3 @@
+WIDTH = 800
+HEIGHT = 500
+SPEED = 5

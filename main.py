@@ -1,11 +1,11 @@
 import pygame
 
+from condfig import HEIGHT, WIDTH
+
 pygame.init()
 
-WIDTH = 800
-HEIGHT = 500
-clock = pygame.time.Clock()
 
+clock = pygame.time.Clock()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
 
