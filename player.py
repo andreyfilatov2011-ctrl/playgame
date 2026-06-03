@@ -1,5 +1,7 @@
 import pygame
 
+SPEED = 5
+
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
@@ -9,23 +11,13 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(midbottom=(100, 500))
         self.speed_x = 0
 
-
     def update(self):
         keys = pygame.key.get_pressed()
         self.speed_x = 0
         if keys[pygame.K_LEFT]:
-          self.speed_x = -5
+            self.speed_x = -5
         if keys[pygame.K_RIGHT]:
-          self.speed_x = 5
-          self.rect.x += self.speed_x
+            self.rect.x += SPEED
 
-    def drou(self, skrin):
-
-
-
-
-
-
-
-
-
+    def draw(self, screen):
+        screen.blit(self.image, self.rect)

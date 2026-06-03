@@ -1,29 +1,32 @@
 import pygame
-from player import Player
-
-
 
 pygame.init()
-screen = pygame.display.set_mode((800, 600))
+
+WIDTH = 800
+HEIGHT = 500
 clock = pygame.time.Clock()
-player = Player()
-all_sprites = pygame.sprite.Group(player)
+
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
 
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-           running = False
+def main():
+    # Todo создать object
+
+    while True:
+        # 1 Cчитывание
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                exit("GAME OVER")
+        # 2 Обновление
+        #updste
+
+        # 3 Отрисовка
+        screen.fill("lightblue")
+        #draw
+
+        pygame.display.update()
+        clock.tick(60)
 
 
-all_sprites.update()
-screen.fill("black")
-all_sprites.draw(screen)
-pygame.display.flip()
-clock.tick(60)
-
-
-pygame.quit()
-
-
+if __name__ == '__main__':
+    main()
