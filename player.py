@@ -1,6 +1,6 @@
 import pygame
 
-from condfig import SPEED
+from condfig import SPEED, WIDTH
 
 
 class Player(pygame.sprite.Sprite):
@@ -13,11 +13,15 @@ class Player(pygame.sprite.Sprite):
 
     def update(self):
         keys = pygame.key.get_pressed()
-        self.speed_x = 0
         if keys[pygame.K_LEFT]:
             self.rect.x -= SPEED
         if keys[pygame.K_RIGHT]:
             self.rect.x += SPEED
+
+        if self.rect.left > WIDTH:
+            self.rect.right = 0
+
+
 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
