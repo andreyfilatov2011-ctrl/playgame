@@ -7,8 +7,8 @@ GRAVITY = 0.8  # лучше 0.8, чем 1 (более плавно)
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.Surface((40, 60))
-        self.image.fill("blue")
+        self.image = pygame.image.load("imj/stay.png")
+        self.image =
         self.rect = self.image.get_rect(midbottom=(100, 500))
         self.speed_x = 0
         self.velocity = 0
@@ -36,6 +36,9 @@ class Player(pygame.sprite.Sprite):
             self.rect.bottom = HEIGHT
             self.velocity = 0  # на земле скорость обнуляем
 
+        if self.rect.bottom >= WIDTH:
+            self.rect.bottom = WIDTH
+
     def jump(self):
         # Прыжок только с земли
         if self.rect.bottom >= HEIGHT:
@@ -43,3 +46,4 @@ class Player(pygame.sprite.Sprite):
 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
+
