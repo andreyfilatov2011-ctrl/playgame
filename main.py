@@ -12,6 +12,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 def main():
     player = Player()
 
+
     while True:
         # 1 Cчитывание
         for event in pygame.event.get():
@@ -20,7 +21,10 @@ def main():
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    print("JUMP")
+                    player.jump()
+
+
+
         # 2 Обновление
 
         player.update()
@@ -29,6 +33,7 @@ def main():
         # 3 Отрисовка
         screen.fill("lightblue")
         player.draw(screen=screen)
+
 
         pygame.display.update()
         clock.tick(60)

@@ -24,6 +24,8 @@ class Player(pygame.sprite.Sprite):
         if self.rect.right < 0:
             self.rect.left = 800
 
+    def jump(self):
+        self.rect.y -= 5
 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
