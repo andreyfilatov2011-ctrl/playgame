@@ -4,6 +4,9 @@ from condfig import HEIGHT, WIDTH
 from player import Player
 pygame.init()
 
+background = pygame.image.load("imj/bag.jpg")
+background = pygame.transform.scale(background, (WIDTH, HEIGHT))
+back_rect = background.get_rect()
 
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -32,7 +35,11 @@ def main():
 
         # 3 Отрисовка
         screen.fill("lightblue")
+        screen.blit(background, back_rect)
+
         player.draw(screen=screen)
+
+
 
 
         pygame.display.update()
