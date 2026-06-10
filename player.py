@@ -1,6 +1,8 @@
 import pygame
 
-from condfig import SPEED, WIDTH
+from condfig import SPEED, WIDTH, HEIGHT
+
+GRAVITY = 1
 
 
 class Player(pygame.sprite.Sprite):
@@ -10,8 +12,13 @@ class Player(pygame.sprite.Sprite):
         self.image.fill("blue")
         self.rect = self.image.get_rect(midbottom=(100, 500))
         self.speed_x = 0
+        self.velocity = 0
 
     def update(self):
+        self.velocity += GRAVITY
+        self.rect.y += self.velocity
+
+
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
             self.rect.x -= SPEED
@@ -24,8 +31,13 @@ class Player(pygame.sprite.Sprite):
         if self.rect.right < 0:
             self.rect.left = 800
 
+
+        if self.rect.bottom >= HEIGHT:
+            self.rect.bottom = HEIGHT
+
     def jump(self):
-        self.rect.y -= 5
+        self.rect.y -= 100
+        self.velocity = 0
 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
